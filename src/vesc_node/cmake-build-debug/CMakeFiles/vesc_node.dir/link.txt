@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/vesc_node.dir/vescnode.cpp.o  -o vesc_node 

@@ -1,6 +1,0 @@
-{
-  "package_name": "motor_msgs",
-  "non_idl_tuples": [
-    "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs:msg/MotorData.msg"
-  ]
-}

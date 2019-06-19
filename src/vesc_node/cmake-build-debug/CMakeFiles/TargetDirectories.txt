@@ -1,5 +1,0 @@
-/opt/repos/ROS_2_VESC_Node/src/vesc_node/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/opt/repos/ROS_2_VESC_Node/src/vesc_node/cmake-build-debug/CMakeFiles/edit_cache.dir
-/opt/repos/ROS_2_VESC_Node/src/vesc_node/cmake-build-debug/CMakeFiles/uninstall.dir
-/opt/repos/ROS_2_VESC_Node/src/vesc_node/cmake-build-debug/CMakeFiles/test.dir
-/opt/repos/ROS_2_VESC_Node/src/vesc_node/cmake-build-debug/CMakeFiles/vesc_node.dir

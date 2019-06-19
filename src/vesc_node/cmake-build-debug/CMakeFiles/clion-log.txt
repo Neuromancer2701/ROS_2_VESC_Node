@@ -1,9 +1,0 @@
-/opt/clion/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /opt/repos/ROS_2_VESC_Node/src/vesc_node
--- Found ament_cmake: 0.7.3 (/opt/ros/dashing/share/ament_cmake/cmake)
--- Using PYTHON_EXECUTABLE: /usr/bin/python3
--- Found rclcpp: 0.7.6 (/opt/ros/dashing/share/rclcpp/cmake)
--- Found rosidl_adapter: 0.7.4 (/opt/ros/dashing/share/rosidl_adapter/cmake)
--- Found rmw_implementation_cmake: 0.7.2 (/opt/ros/dashing/share/rmw_implementation_cmake/cmake)
--- Configuring done
--- Generating done
--- Build files have been written to: /opt/repos/ROS_2_VESC_Node/src/vesc_node/cmake-build-debug
