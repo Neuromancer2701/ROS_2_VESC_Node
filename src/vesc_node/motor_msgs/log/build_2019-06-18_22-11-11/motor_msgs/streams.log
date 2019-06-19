@@ -1,0 +1,184 @@
+Invoking command in '/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_subscriber:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_service:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_publisher:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_client:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_action_server:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_action_client:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_executors:/opt/ros/dashing /usr/bin/cmake /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs -DCMAKE_INSTALL_PREFIX=/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs
+-- Found ament_cmake: 0.7.3 (/opt/ros/dashing/share/ament_cmake/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.6.8", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Found rosidl_default_generators: 0.7.0 (/opt/ros/dashing/share/rosidl_default_generators/cmake)
+-- Found rosidl_adapter: 0.7.4 (/opt/ros/dashing/share/rosidl_adapter/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found version "3.6.8") 
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found ament_cmake_cppcheck: 0.7.3 (/opt/ros/dashing/share/ament_cmake_cppcheck/cmake)
+-- Found ament_cmake_cpplint: 0.7.3 (/opt/ros/dashing/share/ament_cmake_cpplint/cmake)
+-- Found ament_cmake_uncrustify: 0.7.3 (/opt/ros/dashing/share/ament_cmake_uncrustify/cmake)
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 0.7.2 (/opt/ros/dashing/share/rmw_implementation_cmake/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.6.8", minimum required is "3.5") 
+-- Found python_cmake_module: 0.7.7 (/opt/ros/dashing/share/python_cmake_module/cmake)
+-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.6m.so (found suitable version "3.6.8", minimum required is "3.5") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.6m
+-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.6m.so
+-- Found PythonExtra: .so  
+-- Found ament_cmake_flake8: 0.7.3 (/opt/ros/dashing/share/ament_cmake_flake8/cmake)
+-- Found ament_cmake_pep257: 0.7.3 (/opt/ros/dashing/share/ament_cmake_pep257/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs
+Invoked command in '/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_subscriber:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_service:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_publisher:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_client:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_action_server:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_action_client:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_executors:/opt/ros/dashing /usr/bin/cmake /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs -DCMAKE_INSTALL_PREFIX=/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs
+Invoking command in '/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_subscriber:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_service:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_publisher:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_client:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_action_server:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_action_client:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_executors:/opt/ros/dashing /usr/bin/cmake --build /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs -- -j12 -l12
+[  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[35m[1mScanning dependencies of target motor_msgs__cpp[0m
+[  6%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[35m[1mScanning dependencies of target motor_msgs__rosidl_generator_c[0m
+[  6%] Built target motor_msgs__cpp
+[  9%] [32mBuilding C object CMakeFiles/motor_msgs__rosidl_generator_c.dir/rosidl_generator_c/motor_msgs/msg/motor_data__functions.c.o[0m
+[ 12%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[ 16%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[ 19%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[ 22%] [32m[1mLinking C shared library libmotor_msgs__rosidl_generator_c.so[0m
+[ 22%] Built target motor_msgs__rosidl_generator_c
+[ 25%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[ 29%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[35m[1mScanning dependencies of target motor_msgs__rosidl_typesupport_cpp[0m
+[35m[1mScanning dependencies of target motor_msgs__rosidl_typesupport_introspection_cpp[0m
+[ 32%] [32mBuilding CXX object CMakeFiles/motor_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/motor_msgs/msg/motor_data__type_support.cpp.o[0m
+[ 35%] [32mBuilding CXX object CMakeFiles/motor_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/motor_msgs/msg/motor_data__type_support.cpp.o[0m
+[35m[1mScanning dependencies of target motor_msgs__rosidl_typesupport_fastrtps_cpp[0m
+[ 38%] [32mBuilding CXX object CMakeFiles/motor_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/motor_msgs/msg/dds_fastrtps/motor_data__type_support.cpp.o[0m
+[35m[1mScanning dependencies of target motor_msgs__rosidl_typesupport_c[0m
+[ 41%] [32mBuilding CXX object CMakeFiles/motor_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/motor_msgs/msg/motor_data__type_support.cpp.o[0m
+[ 45%] [32m[1mLinking CXX shared library libmotor_msgs__rosidl_typesupport_c.so[0m
+[35m[1mScanning dependencies of target motor_msgs__rosidl_typesupport_introspection_c[0m
+[ 48%] [32mBuilding C object CMakeFiles/motor_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/motor_msgs/msg/motor_data__type_support.c.o[0m
+[ 48%] Built target motor_msgs__rosidl_typesupport_c
+[ 51%] [32m[1mLinking C shared library libmotor_msgs__rosidl_typesupport_introspection_c.so[0m
+[ 51%] Built target motor_msgs__rosidl_typesupport_introspection_c
+[ 54%] [32m[1mLinking CXX shared library libmotor_msgs__rosidl_typesupport_cpp.so[0m
+[ 58%] [32m[1mLinking CXX shared library libmotor_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[ 58%] Built target motor_msgs__rosidl_typesupport_cpp
+[ 58%] Built target motor_msgs__rosidl_typesupport_introspection_cpp
+[ 61%] [32m[1mLinking CXX shared library libmotor_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[ 61%] Built target motor_msgs__rosidl_typesupport_fastrtps_cpp
+[ 64%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[35m[1mScanning dependencies of target motor_msgs__rosidl_typesupport_fastrtps_c[0m
+[ 67%] [32mBuilding CXX object CMakeFiles/motor_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/motor_msgs/msg/motor_data__type_support_c.cpp.o[0m
+[ 70%] [32m[1mLinking CXX shared library libmotor_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[ 70%] Built target motor_msgs__rosidl_typesupport_fastrtps_c
+[35m[1mScanning dependencies of target motor_msgs[0m
+[ 70%] Built target motor_msgs
+[35m[1mScanning dependencies of target motor_msgs__py[0m
+[ 74%] [34m[1mGenerating Python code for ROS interfaces[0m
+[ 74%] Built target motor_msgs__py
+[35m[1mScanning dependencies of target motor_msgs__python[0m
+[ 77%] [32mBuilding C object CMakeFiles/motor_msgs__python.dir/rosidl_generator_py/motor_msgs/msg/_motor_data_s.c.o[0m
+[ 80%] [32m[1mLinking C shared library rosidl_generator_py/motor_msgs/libmotor_msgs__python.so[0m
+[ 80%] Built target motor_msgs__python
+[35m[1mScanning dependencies of target motor_msgs__rosidl_typesupport_c__pyext[0m
+[35m[1mScanning dependencies of target motor_msgs__rosidl_typesupport_introspection_c__pyext[0m
+[35m[1mScanning dependencies of target motor_msgs__rosidl_typesupport_fastrtps_c__pyext[0m
+[ 83%] [32mBuilding C object CMakeFiles/motor_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/motor_msgs/_motor_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[ 87%] [32mBuilding C object CMakeFiles/motor_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/motor_msgs/_motor_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 90%] [32mBuilding C object CMakeFiles/motor_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/motor_msgs/_motor_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[ 93%] [32m[1mLinking C shared library rosidl_generator_py/motor_msgs/motor_msgs_s__rosidl_typesupport_fastrtps_c.cpython-36m-x86_64-linux-gnu.so[0m
+[ 96%] [32m[1mLinking C shared library rosidl_generator_py/motor_msgs/motor_msgs_s__rosidl_typesupport_c.cpython-36m-x86_64-linux-gnu.so[0m
+[100%] [32m[1mLinking C shared library rosidl_generator_py/motor_msgs/motor_msgs_s__rosidl_typesupport_introspection_c.cpython-36m-x86_64-linux-gnu.so[0m
+[100%] Built target motor_msgs__rosidl_typesupport_c__pyext
+[100%] Built target motor_msgs__rosidl_typesupport_introspection_c__pyext
+[100%] Built target motor_msgs__rosidl_typesupport_fastrtps_c__pyext
+Invoked command in '/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_subscriber:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_service:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_publisher:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_client:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_action_server:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_action_client:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_executors:/opt/ros/dashing /usr/bin/cmake --build /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs -- -j12 -l12
+Invoking command in '/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_subscriber:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_service:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_publisher:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_client:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_action_server:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_action_client:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_executors:/opt/ros/dashing /usr/bin/cmake --build /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs --target install
+[  9%] Built target motor_msgs__rosidl_generator_c
+[ 19%] Built target motor_msgs__rosidl_typesupport_introspection_c
+[ 22%] Built target motor_msgs__cpp
+[ 32%] Built target motor_msgs__rosidl_typesupport_cpp
+[ 41%] Built target motor_msgs__rosidl_typesupport_introspection_cpp
+[ 51%] Built target motor_msgs__rosidl_typesupport_c
+[ 61%] Built target motor_msgs__rosidl_typesupport_fastrtps_cpp
+[ 70%] Built target motor_msgs__rosidl_typesupport_fastrtps_c
+[ 70%] Built target motor_msgs
+[ 74%] Built target motor_msgs__py
+[ 80%] Built target motor_msgs__python
+[ 87%] Built target motor_msgs__rosidl_typesupport_fastrtps_c__pyext
+[ 93%] Built target motor_msgs__rosidl_typesupport_introspection_c__pyext
+[100%] Built target motor_msgs__rosidl_typesupport_c__pyext
+[36mInstall the project...[0m
+-- Install configuration: ""
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/ament_index/resource_index/rosidl_interfaces/motor_msgs
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__rosidl_typesupport_c.so
+-- Set runtime path of "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__rosidl_typesupport_c.so" to ""
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/environment/library_path.sh
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__rosidl_typesupport_cpp.so
+-- Set runtime path of "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__rosidl_typesupport_cpp.so" to ""
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/motor_data__rosidl_typesupport_fastrtps_c.h
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__rosidl_typesupport_fastrtps_c.so
+-- Set runtime path of "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+-- Up-to-date: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs
+-- Up-to-date: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/motor_data__struct.h
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/motor_data__functions.c
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/rosidl_generator_c__visibility_control.h
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/motor_data__functions.h
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/motor_data.h
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/motor_data__type_support.h
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__rosidl_generator_c.so
+-- Set runtime path of "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__rosidl_generator_c.so" to ""
+-- Up-to-date: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs
+-- Up-to-date: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/dds_fastrtps
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/motor_data__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__rosidl_typesupport_fastrtps_cpp.so
+-- Set runtime path of "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+-- Up-to-date: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs
+-- Up-to-date: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/motor_data.hpp
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/motor_data__struct.hpp
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/motor_data__traits.hpp
+-- Up-to-date: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs
+-- Up-to-date: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/motor_data__type_support.c
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/motor_data__rosidl_typesupport_introspection_c.h
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__rosidl_typesupport_introspection_c.so
+-- Set runtime path of "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__rosidl_typesupport_introspection_c.so" to ""
+-- Up-to-date: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs
+-- Up-to-date: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/motor_data__type_support.cpp
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/include/motor_msgs/msg/motor_data__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__rosidl_typesupport_introspection_cpp.so
+-- Set runtime path of "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/environment/pythonpath.sh
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/python3.6/site-packages/motor_msgs/__init__.py
+Compiling '/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/python3.6/site-packages/motor_msgs/__init__.py'...
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/python3.6/site-packages/motor_msgs/msg
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/python3.6/site-packages/motor_msgs/msg/_motor_data_s.c
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/python3.6/site-packages/motor_msgs/msg/__init__.py
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/python3.6/site-packages/motor_msgs/msg/_motor_data.py
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/python3.6/site-packages/motor_msgs/motor_msgs_s__rosidl_typesupport_c.cpython-36m-x86_64-linux-gnu.so
+-- Set runtime path of "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/python3.6/site-packages/motor_msgs/motor_msgs_s__rosidl_typesupport_c.cpython-36m-x86_64-linux-gnu.so" to ""
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/python3.6/site-packages/motor_msgs/motor_msgs_s__rosidl_typesupport_fastrtps_c.cpython-36m-x86_64-linux-gnu.so
+-- Set runtime path of "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/python3.6/site-packages/motor_msgs/motor_msgs_s__rosidl_typesupport_fastrtps_c.cpython-36m-x86_64-linux-gnu.so" to ""
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/python3.6/site-packages/motor_msgs/motor_msgs_s__rosidl_typesupport_introspection_c.cpython-36m-x86_64-linux-gnu.so
+-- Set runtime path of "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/python3.6/site-packages/motor_msgs/motor_msgs_s__rosidl_typesupport_introspection_c.cpython-36m-x86_64-linux-gnu.so" to ""
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__python.so
+-- Set runtime path of "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/lib/libmotor_msgs__python.so" to ""
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/msg/MotorData.idl
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/msg/MotorData.msg
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/ament_index/resource_index/package_run_dependencies/motor_msgs
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/ament_index/resource_index/parent_prefix_path/motor_msgs
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/environment/ament_prefix_path.sh
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/environment/path.sh
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/local_setup.bash
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/local_setup.sh
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/local_setup.zsh
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/ament_index/resource_index/packages/motor_msgs
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/cmake/rosidl_cmake-extras.cmake
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/cmake/motor_msgsConfig.cmake
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/cmake/motor_msgsConfig-version.cmake
+-- Installing: /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/install/motor_msgs/share/motor_msgs/package.xml
+Invoked command in '/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_subscriber:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_service:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_publisher:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_client:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_action_server:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_minimal_action_client:/opt/repos/ROS_2_VESC_Node/install/examples_rclpy_executors:/opt/ros/dashing /usr/bin/cmake --build /opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs --target install

@@ -1,0 +1,19 @@
+{
+  "package_name": "motor_msgs",
+  "output_dir": "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs/rosidl_typesupport_introspection_cpp/motor_msgs",
+  "template_dir": "/opt/ros/dashing/share/rosidl_typesupport_introspection_cpp/resource",
+  "idl_tuples": [
+    "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs/rosidl_adapter/motor_msgs:msg/MotorData.idl"
+  ],
+  "target_dependencies": [
+    "/opt/ros/dashing/lib/rosidl_typesupport_introspection_cpp/rosidl_typesupport_introspection_cpp",
+    "/opt/ros/dashing/lib/python3.6/site-packages/rosidl_typesupport_introspection_cpp/__init__.py",
+    "/opt/ros/dashing/share/rosidl_typesupport_introspection_cpp/resource/idl__rosidl_typesupport_introspection_cpp.hpp.em",
+    "/opt/ros/dashing/share/rosidl_typesupport_introspection_cpp/resource/idl__type_support.cpp.em",
+    "/opt/ros/dashing/share/rosidl_typesupport_introspection_cpp/resource/msg__rosidl_typesupport_introspection_cpp.hpp.em",
+    "/opt/ros/dashing/share/rosidl_typesupport_introspection_cpp/resource/msg__type_support.cpp.em",
+    "/opt/ros/dashing/share/rosidl_typesupport_introspection_cpp/resource/srv__rosidl_typesupport_introspection_cpp.hpp.em",
+    "/opt/ros/dashing/share/rosidl_typesupport_introspection_cpp/resource/srv__type_support.cpp.em",
+    "/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs/rosidl_adapter/motor_msgs/msg/MotorData.idl"
+  ]
+}

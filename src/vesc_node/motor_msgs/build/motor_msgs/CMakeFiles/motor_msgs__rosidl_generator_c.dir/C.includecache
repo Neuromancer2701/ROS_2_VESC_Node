@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs/rosidl_generator_c/motor_msgs/msg/motor_data__functions.c
+motor_msgs/msg/motor_data__functions.h
+/opt/repos/ROS_2_VESC_Node/src/vesc_node/motor_msgs/build/motor_msgs/rosidl_generator_c/motor_msgs/msg/motor_msgs/msg/motor_data__functions.h
+assert.h
+-
+stdbool.h
+-
+stdlib.h
+-
+string.h
+-
+
+/opt/ros/dashing/include/rosidl_generator_c/visibility_control.h
+
+rosidl_generator_c/motor_msgs/msg/motor_data__functions.h
+stdbool.h
+-
+stdlib.h
+-
+rosidl_generator_c/visibility_control.h
+rosidl_generator_c/motor_msgs/msg/rosidl_generator_c/visibility_control.h
+motor_msgs/msg/rosidl_generator_c__visibility_control.h
+rosidl_generator_c/motor_msgs/msg/motor_msgs/msg/rosidl_generator_c__visibility_control.h
+motor_msgs/msg/motor_data__struct.h
+rosidl_generator_c/motor_msgs/msg/motor_msgs/msg/motor_data__struct.h
+
+rosidl_generator_c/motor_msgs/msg/motor_data__struct.h
+stdbool.h
+-
+stddef.h
+-
+stdint.h
+-
+
+rosidl_generator_c/motor_msgs/msg/rosidl_generator_c__visibility_control.h
+
