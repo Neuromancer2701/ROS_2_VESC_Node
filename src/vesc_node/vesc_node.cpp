@@ -4,6 +4,8 @@
 
 #include "vesc_node.h"
 
+using std::lock_guard;
+
 vesc_node::vesc_node() : Node("vesc_node")
 {
     publisher_ = this->create_publisher<MotorData>("topic", 10);
@@ -31,4 +33,16 @@ void vesc_node::timer_callback()
 void vesc_node::twist_callback(Twist msg)
 {
 
+}
+
+map<int, int> &vesc_node::getWheelRpms()
+{
+    lock_guard<std::mutex> lock(rpm_mutex);
+    return wheel_rpms;
+}
+
+void vesc_node::setWheelRpms(const map<int, int> &wheelRpms)
+{
+    lock_guard<std::mutex> lock(rpm_mutex);
+    wheel_rpms = wheelRpms;
 }

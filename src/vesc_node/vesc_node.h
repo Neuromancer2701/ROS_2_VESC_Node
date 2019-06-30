@@ -11,11 +11,13 @@
 #include "rclcpp/rclcpp.hpp"
 #include "geometry_msgs/msg/twist.hpp"
 #include "motor_msgs/msg/motor_data.hpp"
+#include "inc/Vesc.h"
 
 using geometry_msgs::msg::Twist;
 using motor_msgs::msg::MotorData;
-using ::std::placeholders::_1;
+using std::placeholders::_1;
 using namespace std::chrono_literals;
+using std::mutex;
 
 class vesc_node :public rclcpp::Node
 {
@@ -38,6 +40,12 @@ private:
         PUB_INTERVAL = 10
     };
 
+    Vesc vescApi;
+    mutex  rpm_mutex;
+    map<int, int> wheel_rpms;
+
+    map<int, int> &getWheelRpms();
+    void setWheelRpms(const map<int, int> &wheelRpms);
 
 };
 
