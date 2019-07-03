@@ -19,21 +19,23 @@ using std::placeholders::_1;
 using namespace std::chrono_literals;
 using std::mutex;
 
-class vesc_node :public rclcpp::Node
+class VescNode
 {
 public:
-    vesc_node();
+    VescNode(rclcpp::Node::SharedPtr n);
+    void onInit();
 
 private:
-    void timer_callback();
+    unsigned long long counter;
+    rclcpp::Node::SharedPtr node_;
     rclcpp::TimerBase::SharedPtr pub_timer_;
     rclcpp::Publisher<MotorData>::SharedPtr publisher_;
 
     rclcpp::Subscription<Twist>::SharedPtr subscription_;
     void twist_callback(Twist msg);
+    void timer_callback();
 
 
-    unsigned long long counter;
 
     enum constants
     {
