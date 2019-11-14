@@ -4,6 +4,7 @@
 
 #include "vesc_node.h"
 
+
 using std::lock_guard;
 
 VescNode::VescNode(rclcpp::Node::SharedPtr n):counter(0), node_(n)
@@ -13,23 +14,24 @@ VescNode::VescNode(rclcpp::Node::SharedPtr n):counter(0), node_(n)
 
 void VescNode::onInit()
 {
-    vescApi.FindandMapMotorControllers();
+    //vescApi.FindandMapMotorControllers();
 
-    if(vescApi.isTwoWheelDrive())
+    //if(vescApi.isTwoWheelDrive())
     {
-        publisher_ = node_->create_publisher<MotorData>("topic", 10);
-        pub_timer_ = node_->create_wall_timer( 50ms, std::bind(&VescNode::timer_callback, this));
-        subscription_ = node_->create_subscription<Twist>("topic", 10, std::bind(&VescNode::twist_callback, this, _1));
+        //publisher_ = node_->create_publisher<MotorData>("topic", 10);
+        //pub_timer_ = node_->create_wall_timer( 50ms, std::bind(&VescNode::timer_callback, this));
+        //subscription_ = node_->create_subscription<Twist>("topic", 10, std::bind(&VescNode::twist_callback, this, _1));
     }
-    else
+    //else
     {
-        RCLCPP_INFO(node_->get_logger(), "Found not find all required wheels");
+    //    RCLCPP_INFO(node_->get_logger(), "Found not find all required wheels");
     }
 
 }
 
 void VescNode::timer_callback()
 {
+#if disabled
     auto wheelRpms = getWheelRpms();
     vescApi.SetWheelsRPM(wheelRpms);
 
@@ -44,14 +46,15 @@ void VescNode::timer_callback()
         publisher_->publish(message);
         counter = 0;
     }
+#endif
 }
 
-void VescNode::twist_callback(Twist msg)
+void VescNode::twist_callback(/*Twist msg*/)
 {
     int K = 32;
     map<int, int> wheelRpms;
-    wheelRpms[Vesc::left_back]  = static_cast<int>(msg.linear.x - K * msg.angular.z);
-    wheelRpms[Vesc::right_back] = static_cast<int>(msg.linear.x + K * msg.angular.z);
+   // wheelRpms[Vesc::left_back]  = static_cast<int>(msg.linear.x - K * msg.angular.z);
+   // wheelRpms[Vesc::right_back] = static_cast<int>(msg.linear.x + K * msg.angular.z);
 
     setWheelRpms(wheelRpms);
 }
