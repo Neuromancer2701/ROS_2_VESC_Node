@@ -7,9 +7,9 @@
 
 using std::lock_guard;
 
-VescNode::VescNode(rclcpp::Node::SharedPtr n):counter(0), node_(n)
+VescNode::VescNode():Node("vesc_pub_sub"), counter(0)
 {
-
+    onInit();
 }
 
 void VescNode::onInit()
@@ -19,7 +19,7 @@ void VescNode::onInit()
     //if(vescApi.isTwoWheelDrive())
     {
         //publisher_ = node_->create_publisher<MotorData>("topic", 10);
-        //pub_timer_ = node_->create_wall_timer( 50ms, std::bind(&VescNode::timer_callback, this));
+        pub_timer_ = this->create_wall_timer( 50ms, std::bind(&VescNode::timer_callback, this));
         //subscription_ = node_->create_subscription<Twist>("topic", 10, std::bind(&VescNode::twist_callback, this, _1));
     }
     //else
@@ -69,4 +69,13 @@ void VescNode::setWheelRpms(const map<int, int> &wheelRpms)
 {
     lock_guard<std::mutex> lock(rpm_mutex);
     wheel_rpms = wheelRpms;
+}
+
+
+int main(int argc, char * argv[])
+{
+    rclcpp::init(argc, argv);
+    rclcpp::spin(std::make_shared<VescNode>());
+    rclcpp::shutdown();
+    return 0;
 }

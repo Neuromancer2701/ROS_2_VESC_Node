@@ -27,15 +27,14 @@ using namespace std::chrono_literals;
 using std::mutex;
 using std::map;
 
-class VescNode
+class VescNode: public rclcpp::Node
 {
 public:
-    VescNode(rclcpp::Node::SharedPtr n);
+    VescNode();
     void onInit();
 
 private:
     unsigned long long counter;
-    rclcpp::Node::SharedPtr node_;
     rclcpp::TimerBase::SharedPtr pub_timer_;
     //rclcpp::Publisher<MotorData>::SharedPtr publisher_;
 

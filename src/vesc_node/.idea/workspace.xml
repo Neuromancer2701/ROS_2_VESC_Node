@@ -14,7 +14,6 @@
   <component name="ChangeListManager">
     <list default="true" id="48babff1-d577-41fa-87a0-05a18166e88e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vesc_node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/vesc_node.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vesc_node.h" beforeDir="false" afterPath="$PROJECT_DIR$/vesc_node.h" afterDir="false" />
     </list>
@@ -87,7 +86,7 @@
       <workItem from="1568808608501" duration="5000" />
       <workItem from="1573676140623" duration="1555000" />
       <workItem from="1573744887225" duration="1365000" />
-      <workItem from="1573757981372" duration="309000" />
+      <workItem from="1573757981372" duration="2354000" />
     </task>
     <servers />
   </component>
@@ -106,16 +105,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/vesc_node.cpp</url>
-          <line>6</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
