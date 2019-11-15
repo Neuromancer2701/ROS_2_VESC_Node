@@ -1,9 +1,8 @@
 //
-// Created by root on 6/25/19.
+// Created by Seth King on 6/25/19.
 //
 
-#include "vesc_node.h"
-
+#include "vesc_node.hpp"
 
 using std::lock_guard;
 
@@ -71,11 +70,3 @@ void VescNode::setWheelRpms(const map<int, int> &wheelRpms)
     wheel_rpms = wheelRpms;
 }
 
-
-int main(int argc, char * argv[])
-{
-    rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<VescNode>());
-    rclcpp::shutdown();
-    return 0;
-}
