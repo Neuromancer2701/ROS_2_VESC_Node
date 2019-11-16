@@ -15,19 +15,17 @@
 #include "vesc_pub_sub/msg/motor_data.hpp"
 #include "geometry_msgs/msg/twist.hpp"
 
+
 #if disabled
-#include "geometry_msgs/msg/twist.hpp"
-#include "motor_msgs/msg/motor_data.hpp"
+
 #include "inc/Vesc.h"
 
-using geometry_msgs::msg::Twist;
-
-using motor_msgs::msg::MotorData;
 #endif
-using std::placeholders::_1;
-using namespace std::chrono_literals;
+
 using std::mutex;
 using std::map;
+using vesc_pub_sub::msg::MotorData;
+using geometry_msgs::msg::Twist;
 
 class VescNode: public rclcpp::Node
 {
@@ -38,10 +36,10 @@ public:
 private:
     unsigned long long counter;
     rclcpp::TimerBase::SharedPtr pub_timer_;
-    //rclcpp::Publisher<MotorData>::SharedPtr publisher_;
+    rclcpp::Publisher<MotorData>::SharedPtr publisher_;
 
-    //rclcpp::Subscription<Twist>::SharedPtr subscription_;
-    void twist_callback(/*Twist msg*/);
+    rclcpp::Subscription<Twist>::SharedPtr subscription_;
+    void twist_callback(const Twist::SharedPtr msg);
     void timer_callback();
 
     enum constants
