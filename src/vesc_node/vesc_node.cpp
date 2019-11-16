@@ -4,7 +4,18 @@
 
 #include "vesc_node.hpp"
 
+#if disabled
+
+#include "inc/Vesc.h"
+using geometry_msgs::msg::Twist;
+using motor_msgs::msg::MotorData;
+#endif
+using std::placeholders::_1;
+using namespace std::chrono_literals;
+using std::mutex;
+using std::map;
 using std::lock_guard;
+
 
 VescNode::VescNode():Node("vesc_pub_sub"), counter(0)
 {
@@ -23,9 +34,22 @@ void VescNode::onInit()
     }
     //else
     {
-    //    RCLCPP_INFO(node_->get_logger(), "Found not find all required wheels");
+        //    RCLCPP_INFO(node_->get_logger(), "Found not find all required wheels");
     }
 
+}
+
+
+map<int, int> &VescNode::getWheelRpms()
+{
+    lock_guard<std::mutex> lock(rpm_mutex);
+    return wheel_rpms;
+}
+
+void VescNode::setWheelRpms(const map<int, int> &wheelRpms)
+{
+    lock_guard<std::mutex> lock(rpm_mutex);
+    wheel_rpms = wheelRpms;
 }
 
 void VescNode::timer_callback()
@@ -58,15 +82,16 @@ void VescNode::twist_callback(/*Twist msg*/)
     setWheelRpms(wheelRpms);
 }
 
-map<int, int> &VescNode::getWheelRpms()
-{
-    lock_guard<std::mutex> lock(rpm_mutex);
-    return wheel_rpms;
-}
 
-void VescNode::setWheelRpms(const map<int, int> &wheelRpms)
-{
-    lock_guard<std::mutex> lock(rpm_mutex);
-    wheel_rpms = wheelRpms;
-}
 
+
+#include <memory>
+#include "rclcpp/rclcpp.hpp"
+
+int main(int argc, char * argv[])
+{
+    rclcpp::init(argc, argv);
+    rclcpp::spin(std::make_shared<VescNode>());
+    rclcpp::shutdown();
+    return 0;
+}

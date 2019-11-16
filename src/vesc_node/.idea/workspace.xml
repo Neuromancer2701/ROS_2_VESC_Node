@@ -2,9 +2,8 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="vesc_node" targetName="vesc_node" />
-      <config projectName="vesc_node" targetName="v_node" />
-      <config projectName="vesc_node" targetName="uninstall" />
+      <config projectName="vesc_pub_sub" targetName="uninstall" />
+      <config projectName="vesc_pub_sub" targetName="vesc_node" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -56,7 +55,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../examples/rclcpp/minimal_composition/src/composed.cpp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../minimal_chatter/CMakeLists.txt" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -72,25 +71,19 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="CMake Application.v_node">
-    <configuration name="uninstall" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="vesc_node" TARGET_NAME="uninstall" CONFIG_NAME="Debug">
+  <component name="RunManager" selected="CMake Application.vesc_node">
+    <configuration name="uninstall" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="vesc_pub_sub" TARGET_NAME="uninstall" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="v_node" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="vesc_node" TARGET_NAME="v_node" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="vesc_node" RUN_TARGET_NAME="v_node">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="vesc_node" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="vesc_node" TARGET_NAME="vesc_node" CONFIG_NAME="Debug">
+    <configuration name="vesc_node" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="vesc_pub_sub" TARGET_NAME="vesc_node" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="vesc_pub_sub" RUN_TARGET_NAME="vesc_node">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="CMake Application.uninstall" />
-      <item itemvalue="CMake Application.v_node" />
       <item itemvalue="CMake Application.vesc_node" />
     </list>
   </component>

@@ -12,6 +12,8 @@
 #include <functional>
 
 #include "rclcpp/rclcpp.hpp"
+#include "vesc_pub_sub/msg/motor_data.hpp"
+#include "geometry_msgs/msg/twist.hpp"
 
 #if disabled
 #include "geometry_msgs/msg/twist.hpp"
@@ -41,8 +43,6 @@ private:
     //rclcpp::Subscription<Twist>::SharedPtr subscription_;
     void twist_callback(/*Twist msg*/);
     void timer_callback();
-
-
 
     enum constants
     {
