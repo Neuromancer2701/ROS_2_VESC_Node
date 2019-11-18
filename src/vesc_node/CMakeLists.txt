@@ -29,7 +29,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 )
 
 add_executable(vesc_node vesc_node.cpp)
-ament_target_dependencies(vesc_node rclcpp std_msgs)
+ament_target_dependencies(vesc_node rclcpp std_msgs geometry_msgs)
 rosidl_target_interfaces(vesc_node ${PROJECT_NAME} "rosidl_typesupport_cpp")
 
 ament_package()

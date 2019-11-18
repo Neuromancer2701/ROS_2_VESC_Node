@@ -23,15 +23,10 @@ void VescNode::onInit()
 
     //if(vescApi.isTwoWheelDrive())
     {
-	rmw_qos_profile_t cmd_vel_qos_profile = rmw_qos_profile_sensor_data;
-  	cmd_vel_qos_profile.history = RMW_QOS_POLICY_HISTORY_KEEP_LAST;
-  	cmd_vel_qos_profile.depth = 50;
-  	cmd_vel_qos_profile.reliability = RMW_QOS_POLICY_RELIABILITY_BEST_EFFORT;
-  	cmd_vel_qos_profile.durability = RMW_QOS_POLICY_DURABILITY_VOLATILE;
+
         publisher_ =    this->create_publisher<MotorData>("motor_data", 10);
         pub_timer_ =    this->create_wall_timer( 50ms, std::bind(&VescNode::timer_callback, this));
-        subscription_ = this->create_subscription<Twist>("cmd_vel", std::bind(&VescNode::twist_callback, this, _1),cmd_vel_qos_profile);
-        //auto cmd_vel_sub = node->create_subscription<geometry_msgs::msg::Twist>( "cmd_vel", cmdVelCallback, cmd_vel_qos_profile);
+        subscription_ = this->create_subscription<geometry_msgs::msg::Twist>("cmd_vel", rclcpp::QoS(10), std::bind(&VescNode::twist_callback, this, _1));
     }
     //else
     {
@@ -73,16 +68,15 @@ void VescNode::timer_callback()
 #endif
 }
 
-void VescNode::twist_callback(const Twist::SharedPtr msg)
+void VescNode::twist_callback(const geometry_msgs::msg::Twist::SharedPtr msg)
 {
-#if 0
     int K = 32;
     map<int, int> wheelRpms;
     wheelRpms[2/*Vesc::left_back*/]  = static_cast<int>(msg->linear.x - K * msg->angular.z);
     wheelRpms[3/*Vesc::right_back*/] = static_cast<int>(msg->linear.x + K * msg->angular.z);
 
     setWheelRpms(wheelRpms);
-#endif
+
 }
 
 
