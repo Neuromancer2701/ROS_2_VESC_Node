@@ -2,7 +2,9 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
+      <config projectName="vesc_pub_sub" targetName="serial_library" />
       <config projectName="vesc_pub_sub" targetName="uninstall" />
+      <config projectName="vesc_pub_sub" targetName="vesc_library" />
       <config projectName="vesc_pub_sub" targetName="vesc_node" />
     </generated>
   </component>
@@ -13,26 +15,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48babff1-d577-41fa-87a0-05a18166e88e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vesc_node.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/SerialPort.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/SerialPortConstants.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/SerialStream.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/SerialStreamBuf.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/Vesc.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/commands.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/datatypes.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/packet.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/utils.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/serial/SerialPort.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/serial/SerialStream.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/serial/SerialStreamBuf.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/vesc/Vesc.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/vesc/commands.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/vesc/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/vesc/packet.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Vesc.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/commands.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/datatypes.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/packet.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libVESC.so.0.0.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libserial.so.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libserial.so.1.0.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/motor_msgs/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/motor_msgs/msg/MotorData.msg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/motor_msgs/package.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.xml" beforeDir="false" afterPath="$PROJECT_DIR$/package.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vesc_node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/vesc_node.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vesc_node.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/visibility.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vesc_node.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/vesc_node.hpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +55,6 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../minimal_chatter/CMakeLists.txt" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -72,7 +73,17 @@
     </option>
   </component>
   <component name="RunManager" selected="CMake Application.vesc_node">
+    <configuration name="serial_library" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="vesc_pub_sub" TARGET_NAME="serial_library" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="uninstall" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="vesc_pub_sub" TARGET_NAME="uninstall" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="vesc_library" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="vesc_pub_sub" TARGET_NAME="vesc_library" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -83,7 +94,9 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="CMake Application.serial_library" />
       <item itemvalue="CMake Application.uninstall" />
+      <item itemvalue="CMake Application.vesc_library" />
       <item itemvalue="CMake Application.vesc_node" />
     </list>
   </component>
@@ -105,6 +118,7 @@
       <workItem from="1573744887225" duration="1365000" />
       <workItem from="1573757981372" duration="2593000" />
       <workItem from="1573824886357" duration="11840000" />
+      <workItem from="1574212265172" duration="2779000" />
     </task>
     <servers />
   </component>
@@ -123,26 +137,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/vesc_node.hpp</url>
-          <line>19</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/vesc_node.hpp</url>
-          <line>21</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/vesc_node.hpp</url>
-          <line>23</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

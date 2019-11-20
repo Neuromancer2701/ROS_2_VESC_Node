@@ -16,11 +16,8 @@
 #include "geometry_msgs/msg/twist.hpp"
 
 
-#if disabled
 
 #include "inc/Vesc.h"
-
-#endif
 
 using std::mutex;
 using std::map;
@@ -47,7 +44,7 @@ private:
         PUB_INTERVAL = 10
     };
 
-    //Vesc vescApi;
+    Vesc vescApi;
     mutex  rpm_mutex;
     map<int, int> wheel_rpms;
 

@@ -10,6 +10,8 @@ endif()
 
 include_directories(.
         /opt/ros/dashing/include/
+        lib/serial/
+        lib/vesc/
         inc/
         )
 
@@ -19,7 +21,7 @@ find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
-set(msg_files 
+set(msg_files
    "msg/MotorData.msg"
 )
 
@@ -28,8 +30,20 @@ rosidl_generate_interfaces(${PROJECT_NAME}
    DEPENDENCIES std_msgs
 )
 
+add_library(serial_library SHARED
+        lib/serial/SerialPort.cpp)
+target_compile_definitions(serial_library PRIVATE "VESC_NODE_DLL")
+
+add_library(vesc_library SHARED
+        lib/vesc/commands.cpp
+        lib/vesc/packet.cpp
+        lib/vesc/Vesc.cpp)
+target_compile_definitions(vesc_library PRIVATE "VESC_NODE_DLL")
+
+
 add_executable(vesc_node vesc_node.cpp)
-ament_target_dependencies(vesc_node rclcpp std_msgs geometry_msgs)
+target_link_libraries(vesc_node vesc_library serial_library )
+ament_target_dependencies(vesc_node rclcpp std_msgs geometry_msgs class_loader)
 rosidl_target_interfaces(vesc_node ${PROJECT_NAME} "rosidl_typesupport_cpp")
 
 ament_package()
