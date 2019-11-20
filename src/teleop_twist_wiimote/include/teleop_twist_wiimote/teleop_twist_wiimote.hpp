@@ -22,30 +22,30 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef TELEOP_TWIST_JOY_TELEOP_TWIST_JOY_H
-#define TELEOP_TWIST_JOY_TELEOP_TWIST_JOY_H
+#ifndef TELEOP_TWIST_WIIMOTE_TELEOP_TWIST_WIIMOTE_H
+#define TELEOP_TWIST_WIIMOTE_TELEOP_TWIST_WIIMOTE_H
 
 #include <rclcpp/rclcpp.hpp>
-#include "teleop_twist_joy/teleop_twist_joy_export.h"
+#include "teleop_twist_wiimote/teleop_twist_wiimote_export.h"
 
-namespace teleop_twist_joy
+namespace teleop_twist_wiimote
 {
 
 /**
- * Class implementing a basic Joy -> Twist translation.
+ * Class implementing a basic Wiimote -> Twist translation.
  */
-class TELEOP_TWIST_JOY_EXPORT TeleopTwistJoy : public rclcpp::Node
+class TELEOP_TWIST_WIIMOTE_EXPORT TeleopTwistWiimote : public rclcpp::Node
 {
 public:
-  explicit TeleopTwistJoy(const rclcpp::NodeOptions& options);
+  explicit TeleopTwistWiimote(const rclcpp::NodeOptions& options);
 
-  virtual ~TeleopTwistJoy();
+  virtual ~TeleopTwistWiimote();
 
 private:
   struct Impl;
   Impl* pimpl_;
 };
 
-}  // namespace teleop_twist_joy
+}  // namespace teleocd p_twist_wiimote
 
-#endif  // TELEOP_TWIST_JOY_TELEOP_TWIST_JOY_H
+#endif  // TELEOP_TWIST_WIIMOTE_TELEOP_TWIST_WIIMOTE_H
