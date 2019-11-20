@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(teleop_twist_joy)
+project(teleop_twist_wiimote)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
@@ -34,7 +34,7 @@ ament_target_dependencies(${PROJECT_NAME}
 )
 
 rclcpp_components_register_nodes(${PROJECT_NAME}
-  "teleop_twist_joy::TeleopTwistJoy")
+  "teleop_twist_wiimote::TeleopTwistWiimote")
 
 add_executable(${PROJECT_NAME}_node src/teleop_node.cpp)
 target_link_libraries(${PROJECT_NAME}_node ${PROJECT_NAME})
@@ -58,37 +58,6 @@ install(FILES
 
 install(DIRECTORY launch config
   DESTINATION share/${PROJECT_NAME})
-
-if(BUILD_TESTING)
-  # Disable some broken tests for now
-  set(ament_cmake_copyright_FOUND TRUE)
-  set(ament_cmake_cpplint_FOUND TRUE)
-  set(ament_cmake_uncrustify_FOUND TRUE)
-
-  find_package(ament_lint_auto REQUIRED)
-  ament_lint_auto_find_test_dependencies()
-
-  set(_teleop_twist_joy_launch_tests
-    # Check axes and scaling.
-    test/differential_joy_launch_test.py
-    test/holonomic_joy_launch_test.py
-    test/six_dof_joy_launch_test.py
-
-    # Check enable and turbo button logic.
-    test/no_enable_joy_launch_test.py
-    test/turbo_enable_joy_launch_test.py
-    test/only_turbo_joy_launch_test.py
-    test/turbo_angular_enable_joy_launch_test.py
-  )
-
-  find_package(launch_testing_ament_cmake REQUIRED)
-  foreach(_test_path ${_teleop_twist_joy_launch_tests})
-    add_launch_test(${_test_path}
-      APPEND_ENV PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/test
-      TIMEOUT 10
-    )
-  endforeach()
-endif()
 
 ament_export_include_directories(include)
 ament_export_libraries(${PROJECT_NAME})
