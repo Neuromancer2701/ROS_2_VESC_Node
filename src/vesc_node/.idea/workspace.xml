@@ -15,26 +15,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48babff1-d577-41fa-87a0-05a18166e88e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/inc/SerialPort.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/SerialPortConstants.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/SerialStream.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/SerialStreamBuf.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/Vesc.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/commands.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/datatypes.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/packet.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/utils.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/serial/SerialPort.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/serial/SerialStream.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/serial/SerialStreamBuf.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/vesc/Vesc.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/vesc/commands.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/vesc/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/vesc/packet.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vesc_node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/vesc_node.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vesc_node.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/vesc_node.hpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +37,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../minimal_chatter/CMakeLists.txt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../joystick_drivers/wiimote" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -118,7 +99,8 @@
       <workItem from="1573744887225" duration="1365000" />
       <workItem from="1573757981372" duration="2593000" />
       <workItem from="1573824886357" duration="11840000" />
-      <workItem from="1574212265172" duration="2779000" />
+      <workItem from="1574212265172" duration="4307000" />
+      <workItem from="1574386970039" duration="1117000" />
     </task>
     <servers />
   </component>
