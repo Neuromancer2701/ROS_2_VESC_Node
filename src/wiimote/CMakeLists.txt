@@ -51,18 +51,16 @@ rosidl_target_interfaces(teleop_wiimote ${PROJECT_NAME} "rosidl_typesupport_cpp"
 
 ament_package()
 
-# Install launch files
-install(DIRECTORY launch/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
-)
 
-# Install targets
-install(PROGRAMS nodes/feedbackTester.py  nodes/wiimote_node.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-  )
-## Mark executables and/or libraries for installation
-install(TARGETS wiimote_node
-  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+#install(TARGETS
+#        composition_nodes
+#        ARCHIVE DESTINATION lib
+#        LIBRARY DESTINATION lib
+#        RUNTIME DESTINATION bin)
+
+install(TARGETS
+        wiimote_node
+        teleop_wiimote
+        DESTINATION lib/${PROJECT_NAME})
+
+
