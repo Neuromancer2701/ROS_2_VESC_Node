@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.11)
+cmake_minimum_required(VERSION 3.10)
 project(vesc_pub_sub)
 
 # Default to C++17
@@ -10,8 +10,6 @@ endif()
 
 include_directories(.
         /opt/ros/dashing/include/
-        lib/serial/
-        lib/vesc/
         inc/
         )
 

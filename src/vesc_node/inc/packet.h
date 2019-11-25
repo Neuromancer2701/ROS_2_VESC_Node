@@ -27,7 +27,7 @@
 #include <cmath>
 #include <cstddef>
 #include <functional>
-#include <SerialPort.h>
+#include <libserial/SerialPort.h>
 
 using std::vector;
 using std::byte;
