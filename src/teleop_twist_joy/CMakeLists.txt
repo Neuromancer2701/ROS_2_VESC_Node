@@ -61,7 +61,6 @@ install(FILES
 install(DIRECTORY launch config
   DESTINATION share/${PROJECT_NAME})
 
-
 set(BUILD_TESTING FALSE)
 
 if(BUILD_TESTING)
