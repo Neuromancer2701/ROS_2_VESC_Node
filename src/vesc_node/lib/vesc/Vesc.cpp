@@ -9,7 +9,7 @@
 #include <thread>
 #include "Vesc.h"
 #include "utils.h"
-#include "SerialPort.h"
+#include "libserial/SerialPort.h"
 #include <algorithm>
 
 using std::to_string;
