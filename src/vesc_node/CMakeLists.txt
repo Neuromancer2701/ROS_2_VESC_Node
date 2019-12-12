@@ -46,6 +46,11 @@ rosidl_target_interfaces(vesc_node ${PROJECT_NAME} "rosidl_typesupport_cpp")
 
 ament_package()
 
+install(TARGETS ${PROJECT_NAME}
+        ARCHIVE DESTINATION lib
+        LIBRARY DESTINATION lib
+        RUNTIME DESTINATION bin)
+
 install(TARGETS
         vesc_node
         DESTINATION lib/${PROJECT_NAME})
