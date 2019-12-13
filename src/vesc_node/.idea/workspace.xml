@@ -2,10 +2,10 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="vesc_pub_sub" targetName="serial_library" />
       <config projectName="vesc_pub_sub" targetName="uninstall" />
-      <config projectName="vesc_pub_sub" targetName="vesc_library" />
       <config projectName="vesc_pub_sub" targetName="vesc_node" />
+      <config projectName="vesc_pub_sub" targetName="serial_library" />
+      <config projectName="vesc_pub_sub" targetName="vesc_library" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -17,6 +17,7 @@
     <list default="true" id="48babff1-d577-41fa-87a0-05a18166e88e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/vesc/commands.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lib/vesc/commands.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +28,6 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -38,7 +38,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wiimote" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../examples/rclcpp/minimal_composition/CMakeLists.txt" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -103,6 +103,7 @@
       <workItem from="1574212265172" duration="4307000" />
       <workItem from="1574386970039" duration="3361000" />
       <workItem from="1576116328231" duration="1549000" />
+      <workItem from="1576243167944" duration="965000" />
     </task>
     <servers />
   </component>

@@ -112,7 +112,8 @@ void Commands::processPacket(vector<byte> &message)
 
         if (message.size() >= 1)
         {
-            //isPaired = message.vbPopFrontInt8();
+            //Packet::pop(message, motorControllerData.tachometer);
+            isPaired = false;
         }
 
     } break;

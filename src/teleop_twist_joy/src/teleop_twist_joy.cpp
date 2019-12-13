@@ -50,20 +50,12 @@ namespace teleop_twist_joy
 struct TeleopTwistJoy::Impl
 {
   void joyCallback(const sensor_msgs::msg::Joy::SharedPtr joy);
-  void sendCmdVelMsg(const sensor_msgs::msg::Joy::SharedPtr, const std::string& which_map);
+  void sendCmdVelMsg(const sensor_msgs::msg::Joy::SharedPtr);
 
   rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr joy_sub;
   rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_pub;
 
   int64_t enable_button;
-  int64_t enable_turbo_button;
-
-  std::map<std::string, int64_t> axis_linear_map;
-  std::map<std::string, std::map<std::string, double>> scale_linear_map;
-
-  std::map<std::string, int64_t> axis_angular_map;
-  std::map<std::string, std::map<std::string, double>> scale_angular_map;
-
   bool sent_disable_msg;
 };
 
@@ -87,8 +79,8 @@ TeleopTwistJoy::~TeleopTwistJoy()
   delete pimpl_;
 }
 
-void TeleopTwistJoy::Impl::sendCmdVelMsg(const sensor_msgs::msg::Joy::SharedPtr joy_msg,
-                                         const std::string& which_map)
+void TeleopTwistJoy::Impl::sendCmdVelMsg(const sensor_msgs::msg::Joy::SharedPtr joy_msg
+                                         )
 {
   // Initializes with zeros by default.
   auto cmd_vel_msg = std::make_unique<geometry_msgs::msg::Twist>();
@@ -105,7 +97,7 @@ void TeleopTwistJoy::Impl::joyCallback(const sensor_msgs::msg::Joy::SharedPtr jo
   if (static_cast<int>(joy_msg->buttons.size()) > enable_button &&
            joy_msg->buttons[enable_button])
   {
-    sendCmdVelMsg(joy_msg, "normal");
+    sendCmdVelMsg(joy_msg);
   }
   else
   {

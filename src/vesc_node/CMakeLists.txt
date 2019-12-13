@@ -38,15 +38,26 @@ add_library(vesc_library SHARED
         lib/vesc/Vesc.cpp)
 target_compile_definitions(vesc_library PRIVATE "VESC_NODE_DLL")
 
+if(NOT WIN32)
+  ament_environment_hooks(
+          "${ament_cmake_package_templates_ENVIRONMENT_HOOK_LIBRARY_PATH}"
+  )
+endif()
+
 
 add_executable(vesc_node vesc_node.cpp)
 target_link_libraries(vesc_node vesc_library serial_library )
 ament_target_dependencies(vesc_node rclcpp std_msgs geometry_msgs class_loader)
 rosidl_target_interfaces(vesc_node ${PROJECT_NAME} "rosidl_typesupport_cpp")
 
-ament_package()
+install(TARGETS
+        serial_library
+        ARCHIVE DESTINATION lib
+        LIBRARY DESTINATION lib
+        RUNTIME DESTINATION bin)
 
-install(TARGETS ${PROJECT_NAME}
+install(TARGETS
+        vesc_library
         ARCHIVE DESTINATION lib
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION bin)
@@ -54,6 +65,8 @@ install(TARGETS ${PROJECT_NAME}
 install(TARGETS
         vesc_node
         DESTINATION lib/${PROJECT_NAME})
+
+ament_package()
 
 
 #colcon build --packages-select
