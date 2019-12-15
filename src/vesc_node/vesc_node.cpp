@@ -27,7 +27,7 @@ void VescNode::onInit()
     {
         RCUTILS_LOG_INFO("Found all required wheels");
         publisher_ =    this->create_publisher<MotorData>("motor_data", 10);
-        pub_timer_ =    this->create_wall_timer( 50ms, std::bind(&VescNode::timer_callback, this));
+        pub_timer_ =    this->create_wall_timer( 100ms, std::bind(&VescNode::timer_callback, this));
         subscription_ = this->create_subscription<geometry_msgs::msg::Twist>("cmd_vel", rclcpp::QoS(10), std::bind(&VescNode::twist_callback, this, _1));
     }
     else
@@ -54,6 +54,8 @@ void VescNode::timer_callback()
 {
 
     auto wheelRpms = getWheelRpms();
+
+    RCUTILS_LOG_INFO("timer_callback:left rpm %d right rpm:%d",wheelRpms[Vesc::left_back], wheelRpms[Vesc::right_back]);
     vescApi.SetWheelsRPM(wheelRpms);
 
     if(counter++ > PUB_INTERVAL)
@@ -72,12 +74,13 @@ void VescNode::timer_callback()
 
 void VescNode::twist_callback(const geometry_msgs::msg::Twist::SharedPtr msg)
 {
-    RCUTILS_LOG_INFO("Twist callback:x %d z:%d",static_cast<int>(msg->linear.x), static_cast<int>(msg->angular.z));
-    int K = 100;
-    map<int, int> wheelRpms;
-    wheelRpms[Vesc::left_back]  = static_cast<int>(msg->linear.x - K * msg->angular.z);
-    wheelRpms[Vesc::right_back] = static_cast<int>(msg->linear.x + K * msg->angular.z);
 
+    double K = 500.0;
+    map<int, int> wheelRpms;
+    wheelRpms[Vesc::left_back]  = static_cast<int>(msg->linear.x - (K * msg->angular.z));
+    wheelRpms[Vesc::right_back] = static_cast<int>(msg->linear.x + (K * msg->angular.z));
+
+    RCUTILS_LOG_INFO("Twist callback:left rpm %d right rpm:%d",wheelRpms[Vesc::left_back], wheelRpms[Vesc::right_back]);
     setWheelRpms(wheelRpms);
 
 }
