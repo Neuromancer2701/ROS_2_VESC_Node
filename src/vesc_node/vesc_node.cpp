@@ -70,7 +70,7 @@ void VescNode::timer_callback()
 
 void VescNode::twist_callback(const geometry_msgs::msg::Twist::SharedPtr msg)
 {
-    int K = 32;
+    int K = 100;
     map<int, int> wheelRpms;
     wheelRpms[Vesc::left_back]  = static_cast<int>(msg->linear.x - K * msg->angular.z);
     wheelRpms[Vesc::right_back] = static_cast<int>(msg->linear.x + K * msg->angular.z);

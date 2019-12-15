@@ -113,7 +113,7 @@ void Commands::processPacket(vector<byte> &message)
         if (message.size() >= 1)
         {
             //Packet::pop(message, motorControllerData.tachometer);
-            isPaired = false;
+            if(isPaired){}
         }
 
     } break;

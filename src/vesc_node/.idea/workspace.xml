@@ -2,10 +2,10 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="vesc_pub_sub" targetName="uninstall" />
-      <config projectName="vesc_pub_sub" targetName="vesc_node" />
       <config projectName="vesc_pub_sub" targetName="serial_library" />
+      <config projectName="vesc_pub_sub" targetName="uninstall" />
       <config projectName="vesc_pub_sub" targetName="vesc_library" />
+      <config projectName="vesc_pub_sub" targetName="vesc_node" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -14,11 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48babff1-d577-41fa-87a0-05a18166e88e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/vesc/commands.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lib/vesc/commands.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="48babff1-d577-41fa-87a0-05a18166e88e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +24,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
