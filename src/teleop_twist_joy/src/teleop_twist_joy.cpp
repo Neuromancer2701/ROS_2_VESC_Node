@@ -84,9 +84,9 @@ void TeleopTwistJoy::Impl::sendCmdVelMsg(const sensor_msgs::msg::Joy::SharedPtr 
 {
   // Initializes with zeros by default.
   auto cmd_vel_msg = std::make_unique<geometry_msgs::msg::Twist>();
-
-  cmd_vel_msg->linear.x = joy_msg->axes[0];
-  cmd_vel_msg->angular.z = joy_msg->axes[1];
+  double w = 2500.0
+  cmd_vel_msg->linear.x = joy_msg->axes[0]*w;
+  cmd_vel_msg->angular.z = joy_msg->axes[1]*w;
 
   cmd_vel_pub->publish(std::move(cmd_vel_msg));
   sent_disable_msg = false;
