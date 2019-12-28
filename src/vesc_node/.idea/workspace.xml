@@ -14,10 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48babff1-d577-41fa-87a0-05a18166e88e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../teleop_twist_joy/launch/teleop-launch.py" beforeDir="false" afterPath="$PROJECT_DIR$/../teleop_twist_joy/launch/teleop-launch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../teleop_twist_joy/src/teleop_twist_joy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../teleop_twist_joy/src/teleop_twist_joy.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="48babff1-d577-41fa-87a0-05a18166e88e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

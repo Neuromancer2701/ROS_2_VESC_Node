@@ -17,7 +17,4 @@ def generate_launch_description():
             package='teleop_twist_joy', node_executable='teleop_node',
             name='teleop_twist_joy_node',
             ),
-        launch_ros.actions.Node(
-            package='vesc_pub_sub', node_executable='vesc_node', name='vesc_node',
-        ),
     ])
