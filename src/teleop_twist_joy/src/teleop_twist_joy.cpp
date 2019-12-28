@@ -36,8 +36,6 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 
 #include "teleop_twist_joy/teleop_twist_joy.hpp"
 
-#define ROS_INFO_NAMED RCUTILS_LOG_INFO_NAMED
-#define ROS_INFO_COND_NAMED RCUTILS_LOG_INFO_EXPRESSION_NAMED
 
 namespace teleop_twist_joy
 {
@@ -72,6 +70,8 @@ TeleopTwistJoy::TeleopTwistJoy(const rclcpp::NodeOptions& options) : Node("teleo
 
   pimpl_->enable_button = this->declare_parameter("enable_button", 5);
   pimpl_->sent_disable_msg = false;
+
+    RCUTILS_LOG_INFO("%s ", __PRETTY_FUNCTION__);
 }
 
 TeleopTwistJoy::~TeleopTwistJoy()
@@ -84,7 +84,7 @@ void TeleopTwistJoy::Impl::sendCmdVelMsg(const sensor_msgs::msg::Joy::SharedPtr 
 {
   // Initializes with zeros by default.
   auto cmd_vel_msg = std::make_unique<geometry_msgs::msg::Twist>();
-  double w = 2500.0
+  double w = 2500.0;
   cmd_vel_msg->linear.x = joy_msg->axes[0]*w;
   cmd_vel_msg->angular.z = joy_msg->axes[1]*w;
 
@@ -94,6 +94,7 @@ void TeleopTwistJoy::Impl::sendCmdVelMsg(const sensor_msgs::msg::Joy::SharedPtr 
 
 void TeleopTwistJoy::Impl::joyCallback(const sensor_msgs::msg::Joy::SharedPtr joy_msg)
 {
+    RCUTILS_LOG_INFO("%s ", __PRETTY_FUNCTION__);
   if (static_cast<int>(joy_msg->buttons.size()) > enable_button &&
            joy_msg->buttons[enable_button])
   {

@@ -16,6 +16,7 @@ using std::lock_guard;
 
 VescNode::VescNode():Node("vesc_pub_sub"), counter(0)
 {
+    RCUTILS_LOG_INFO("%s ", __PRETTY_FUNCTION__);
     onInit();
 }
 
