@@ -14,7 +14,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48babff1-d577-41fa-87a0-05a18166e88e" name="Default Changelist" comment="" />
+    <list default="true" id="48babff1-d577-41fa-87a0-05a18166e88e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/vesc_node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/vesc_node.cpp" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

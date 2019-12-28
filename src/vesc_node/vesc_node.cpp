@@ -78,8 +78,9 @@ void VescNode::twist_callback(const geometry_msgs::msg::Twist::SharedPtr msg)
 
     double K = 2.0;  // this ends up being the max RPM of the motors
     map<int, int> wheelRpms;
-    wheelRpms[Vesc::left_back]  = static_cast<int>(msg->linear.x - (K * msg->angular.z));
-    wheelRpms[Vesc::right_back] = static_cast<int>(msg->linear.x + (K * msg->angular.z));
+    double scalar = 0.75;
+    wheelRpms[Vesc::left_back]  = static_cast<int>((msg->linear.x - (K * msg->angular.z))* scalar);
+    wheelRpms[Vesc::right_back] = static_cast<int>((msg->linear.x + (K * msg->angular.z))* scalar);
 
     RCUTILS_LOG_INFO("Twist callback:left rpm %d right rpm:%d",wheelRpms[Vesc::left_back], wheelRpms[Vesc::right_back]);
     setWheelRpms(wheelRpms);
