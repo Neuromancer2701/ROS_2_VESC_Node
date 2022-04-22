@@ -27,6 +27,9 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 #include <map>
 #include <memory>
 #include <string>
+#include <cmath>
+#include <numbers>
+#include <chrono>
 
 #include <geometry_msgs/msg/twist.hpp>
 #include <rclcpp/rclcpp.hpp>
@@ -35,6 +38,15 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 #include <sensor_msgs/msg/joy.hpp>
 
 #include "teleop_twist_joy/teleop_twist_joy.hpp"
+
+namespace {
+    using namespace std::numbers;
+    using namespace std::chrono_literals;
+    using namespace std::chrono::steady_clock;
+    using namespace std::chrono::time_point;
+
+    constexpr double MILLISECOND_COUNT{1000.0};
+}
 
 
 namespace teleop_twist_joy
@@ -55,6 +67,10 @@ struct TeleopTwistJoy::Impl
 
   int64_t enable_button;
   bool sent_disable_msg;
+  time_point  previousTime_ms{0ms};
+  time_point  currentTime_ms{0ms};
+  double previousTheta_angle;
+  double currentTheta_angle;
 };
 
 /**
@@ -79,14 +95,23 @@ TeleopTwistJoy::~TeleopTwistJoy()
   delete pimpl_;
 }
 
-void TeleopTwistJoy::Impl::sendCmdVelMsg(const sensor_msgs::msg::Joy::SharedPtr joy_msg
-                                         )
+void TeleopTwistJoy::Impl::sendCmdVelMsg(const sensor_msgs::msg::Joy::SharedPtr joy_msg)
 {
   // Initializes with zeros by default.
   auto cmd_vel_msg = std::make_unique<geometry_msgs::msg::Twist>();
-  double w = 2500.0;
-  cmd_vel_msg->linear.x = joy_msg->axes[0]*w;
-  cmd_vel_msg->angular.z = joy_msg->axes[1]*w;
+  auto x{joy_msg->axes[0]};
+  auto y{joy_msg->axes[1]};
+
+  auto magnitude{sqrt((x*x) + (y*y))};
+  previousTheta_angle = currentTheta_angle;
+  currentTheta_angle = atan2 (y,x) * 180 / pi;
+
+  previousTime_ms = currentTime_ms;
+  currentTime_ms = steady_clock.now();
+  auto delta{(currentTime_ms.count() - previousTime_ms.count())/MILLISECOND_COUNT};
+
+  cmd_vel_msg->linear.x  = magnitude;
+  cmd_vel_msg->angular.z = ((currentTheta_angle - previousTheta_angle)/delta);
 
   cmd_vel_pub->publish(std::move(cmd_vel_msg));
   sent_disable_msg = false;

@@ -1,7 +1,3 @@
-//
-// Created by root on 5/29/19.
-//
-
 #ifndef VESC_UTILS_H
 #define VESC_UTILS_H
 

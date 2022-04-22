@@ -7,11 +7,14 @@
 #include "rclcpp/rclcpp.hpp"
 #include <rcutils/logging_macros.h>
 
-using std::placeholders::_1;
-using namespace std::chrono_literals;
-using std::mutex;
-using std::map;
-using std::lock_guard;
+namespace{
+    using std::placeholders::_1;
+    using namespace std::chrono_literals;
+    using std::mutex;
+    using std::map;
+    using std::lock_guard;
+}
+
 
 
 VescNode::VescNode():Node("vesc_pub_sub"), counter(0)
