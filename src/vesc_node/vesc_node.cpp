@@ -1,6 +1,3 @@
-//
-// Created by Seth King on 6/25/19.
-//
 
 #include "vesc_node.hpp"
 #include <memory>
@@ -31,7 +28,7 @@ void VescNode::onInit()
     {
         RCUTILS_LOG_INFO("Found all required wheels");
         publisher_ =    this->create_publisher<MotorData>("motor_data", 10);
-        pub_timer_ =    this->create_wall_timer( 100ms, std::bind(&VescNode::timer_callback, this));
+        pub_timer_ =    this->create_wall_timer( 20ms, std::bind(&VescNode::timer_callback, this));
         subscription_ = this->create_subscription<geometry_msgs::msg::Twist>("cmd_vel", rclcpp::QoS(10), std::bind(&VescNode::twist_callback, this, _1));
     }
     else
@@ -42,7 +39,7 @@ void VescNode::onInit()
 }
 
 
-map<int, int> &VescNode::getWheelRpms()
+map<int, int> VescNode::getWheelRpms()
 {
     lock_guard<std::mutex> lock(rpm_mutex);
     return wheel_rpms;
@@ -62,7 +59,7 @@ void VescNode::timer_callback()
     RCUTILS_LOG_INFO("timer_callback:left rpm %d right rpm:%d",wheelRpms[Vesc::left_back], wheelRpms[Vesc::right_back]);
     vescApi.SetWheelsRPM(wheelRpms);
 
-    if(counter++ > PUB_INTERVAL)
+    if(++counter > PUB_INTERVAL)
     {
         //TODO vescApi.getMotorData;
         auto message = MotorData();
@@ -79,11 +76,14 @@ void VescNode::timer_callback()
 void VescNode::twist_callback(const geometry_msgs::msg::Twist::SharedPtr msg)
 {
 
-    double K = 2.0;  // this ends up being the max RPM of the motors
+    double w_L{msg->angular.z * L_m}
+    double scaledVelocity_m_per_s{msg->linear.x * V_MAX_m_per_s * 2};
     map<int, int> wheelRpms;
-    double scalar = 0.55;
-    wheelRpms[Vesc::left_back]  = static_cast<int>((msg->linear.x - (K * msg->angular.z))* scalar);
-    wheelRpms[Vesc::right_back] = static_cast<int>((msg->linear.x + (K * msg->angular.z))* scalar);
+    auto Velocity_right_m_per_s {((scaledVelocity_m_per_s + w_L)/DIAMETER_m)};
+    auto Velocity_left_m_per_s {((scaledVelocity_m_per_s - w_L)/DIAMETER_m)};
+
+    wheelRpms[Vesc::right_back] = static_cast<int>(m_per_sec_convert_RPM * Velocity_right_m_per_s);
+    wheelRpms[Vesc::left_back]  = static_cast<int>(m_per_sec_convert_RPM * Velocity_left_m_per_s);
 
     RCUTILS_LOG_INFO("Twist callback:left rpm %d right rpm:%d",wheelRpms[Vesc::left_back], wheelRpms[Vesc::right_back]);
     setWheelRpms(wheelRpms);

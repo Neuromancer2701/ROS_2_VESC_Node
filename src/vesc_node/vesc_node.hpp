@@ -48,8 +48,13 @@ private:
     mutex  rpm_mutex;
     map<int, int> wheel_rpms;
 
-    map<int, int> &getWheelRpms();
+    map<int, int> getWheelRpms();
     void setWheelRpms(const map<int, int> &wheelRpms);
+
+    constexpr double V_MAX_m_per_s{4.5};
+    constexpr double L_m{0.9271};
+    constexpr double DIAMETER_m{0.3048};
+    constexpr double m_per_sec_convert_RPM{62.69}; //m/s * convert = RPM
 
 };
 
