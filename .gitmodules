@@ -1,0 +1,3 @@
+[submodule "src/vesc_node/lib/libVESC"]
+	path = src/vesc_node/lib/libVESC
+	url = https://github.com/Neuromancer2701/libVESC.git
