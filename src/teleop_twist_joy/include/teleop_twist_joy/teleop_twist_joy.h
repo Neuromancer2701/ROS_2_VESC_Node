@@ -25,8 +25,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 #ifndef TELEOP_TWIST_JOY_TELEOP_TWIST_JOY_H
 #define TELEOP_TWIST_JOY_TELEOP_TWIST_JOY_H
 
-#include <rclcpp/rclcpp.hpp>
-#include "teleop_twist_joy/teleop_twist_joy_export.h"
+namespace ros { class NodeHandle; }
 
 namespace teleop_twist_joy
 {
@@ -34,17 +33,15 @@ namespace teleop_twist_joy
 /**
  * Class implementing a basic Joy -> Twist translation.
  */
-class TELEOP_TWIST_JOY_EXPORT TeleopTwistJoy : public rclcpp::Node
-{
-public:
-  explicit TeleopTwistJoy(const rclcpp::NodeOptions& options);
+    class TeleopTwistJoy
+    {
+    public:
+        TeleopTwistJoy(ros::NodeHandle* nh, ros::NodeHandle* nh_param);
 
-  virtual ~TeleopTwistJoy();
-
-private:
-  struct Impl;
-  Impl* pimpl_;
-};
+    private:
+        struct Impl;
+        Impl* pimpl_;
+    };
 
 }  // namespace teleop_twist_joy
 

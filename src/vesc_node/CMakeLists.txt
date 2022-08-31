@@ -1,16 +1,17 @@
 cmake_minimum_required(VERSION 3.10)
 project(vesc_pub_sub)
 
-# Default to C++17
-set(CMAKE_CXX_STANDARD 17)
+# Default to C++20
+set(CMAKE_CXX_STANDARD 20)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
 include_directories(.
-        /opt/ros/dashing/include/
-        inc/
+        /opt/ros/rolling/include/
+        lib/libVESC/inc
+        /usr/include/libserial
         )
 
 find_package(ament_cmake REQUIRED)
@@ -28,9 +29,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
    DEPENDENCIES std_msgs
 )
 
-add_library(serial_library SHARED
-        lib/libVESC/inc/libserial/SerialPort.)
-target_compile_definitions(serial_library PRIVATE "VESC_NODE_DLL")
+link_directories(/usr/lib/x86_64-linux-gnu/ )
 
 add_library(vesc_library SHARED
         lib/libVESC/commands.cpp
@@ -46,15 +45,10 @@ endif()
 
 
 add_executable(vesc_node vesc_node.cpp)
-target_link_libraries(vesc_node vesc_library serial_library )
+target_link_libraries(vesc_node vesc_library libserial.so )
 ament_target_dependencies(vesc_node rclcpp std_msgs geometry_msgs)
 rosidl_target_interfaces(vesc_node ${PROJECT_NAME} "rosidl_typesupport_cpp")
 
-install(TARGETS
-        serial_library
-        ARCHIVE DESTINATION lib
-        LIBRARY DESTINATION lib
-        RUNTIME DESTINATION bin)
 
 install(TARGETS
         vesc_library

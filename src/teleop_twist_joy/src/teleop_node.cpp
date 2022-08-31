@@ -23,19 +23,15 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCL
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include <memory>
-
-#include <rclcpp/rclcpp.hpp>
-
-#include "teleop_twist_joy/teleop_twist_joy.hpp"
+#include "ros/ros.h"
+#include "teleop_twist_joy/teleop_twist_joy.h"
 
 int main(int argc, char *argv[])
 {
-  rclcpp::init(argc, argv);
+    ros::init(argc, argv, "teleop_twist_joy_node");
 
-  rclcpp::spin(std::make_unique<teleop_twist_joy::TeleopTwistJoy>(rclcpp::NodeOptions()));
+    ros::NodeHandle nh(""), nh_param("~");
+    teleop_twist_joy::TeleopTwistJoy joy_teleop(&nh, &nh_param);
 
-  rclcpp::shutdown();
-
-  return 0;
+    ros::spin();
 }
