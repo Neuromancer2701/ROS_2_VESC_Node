@@ -28,7 +28,6 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 #include <memory>
 #include <string>
 #include <cmath>
-#include <numbers>
 #include <chrono>
 
 #include <geometry_msgs/msg/twist.hpp>
@@ -39,12 +38,15 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 
 #include "teleop_twist_joy/teleop_twist_joy.hpp"
 
-using namespace std::literals;
+// this will get moved to a header of its own eventually.
+using Sec = std::chrono::duration<double>;
+
 
 namespace teleop_twist_joy
 {
 
     constexpr double MILLISECOND_COUNT{1000.0};
+    constexpr double DELTA_THRESHOLD_S{0.0001}; //0.1 ms
 
 /**
  * Internal members of class. This is the pimpl idiom, and allows more flexibility in adding
@@ -61,10 +63,11 @@ struct TeleopTwistJoy::Impl
 
   int64_t enable_button;
   bool sent_disable_msg;
-  std::chrono::time_point<std::chrono::system_clock>   previousTime_ms{0ms)};
-  std::chrono::time_point<std::chrono::system_clock>   currentTime_ms{0ms)};
-  double previousTheta_angle;
-  double currentTheta_angle;
+  std::chrono::time_point<std::chrono::steady_clock>  previousTime;
+  std::chrono::time_point<std::chrono::steady_clock>   currentTime;
+  bool m_firstTime{true};
+  double previousTheta_angle{0.0};
+  double currentTheta_angle{0.0};
 };
 
 /**
@@ -81,7 +84,7 @@ TeleopTwistJoy::TeleopTwistJoy(const rclcpp::NodeOptions& options) : Node("teleo
   pimpl_->enable_button = this->declare_parameter("enable_button", 5);
   pimpl_->sent_disable_msg = false;
 
-    RCUTILS_LOG_INFO("%s ", __PRETTY_FUNCTION__);
+  RCUTILS_LOG_INFO("%s ", __PRETTY_FUNCTION__);
 }
 
 TeleopTwistJoy::~TeleopTwistJoy()
@@ -98,16 +101,26 @@ void TeleopTwistJoy::Impl::sendCmdVelMsg(const sensor_msgs::msg::Joy::SharedPtr 
 
   auto magnitude{hypot(x, y)};
   previousTheta_angle = currentTheta_angle;
-  currentTheta_angle = atan2 (y,x) * 180 / std::numbers::pi;
+  currentTheta_angle = atan2 (y,x) * 180 / M_PI;
 
-  previousTime_ms = currentTime_ms;
-  currentTime_ms = std::chrono::steady_clock::now();
-  auto delta{(currentTime_ms.count() - previousTime_ms.count())/MILLISECOND_COUNT};
+  if(m_firstTime){
+      previousTime = std::chrono::steady_clock::now();
+      currentTime = std::chrono::steady_clock::now();
+      m_firstTime = false;
+      return;
+  }
 
-  cmd_vel_msg->linear.x  = magnitude;
-  cmd_vel_msg->angular.z = ((currentTheta_angle - previousTheta_angle)/delta);
+  previousTime = currentTime;
+  currentTime = std::chrono::steady_clock::now();
+  auto delta{std::chrono::duration_cast<Sec>(currentTime - previousTime).count()};
 
-  cmd_vel_pub->publish(std::move(cmd_vel_msg));
+  if(delta > DELTA_THRESHOLD_S){
+      cmd_vel_msg->linear.x  = magnitude;
+      cmd_vel_msg->angular.z = ((currentTheta_angle - previousTheta_angle)/delta);
+
+      cmd_vel_pub->publish(std::move(cmd_vel_msg));
+  }
+
   sent_disable_msg = false;
 }
 
