@@ -11,21 +11,21 @@
 #include <mutex>
 #include <functional>
 
-#include "geometry_msgs/Twist.h"
-#include "ros/ros.h"
+#include "rclcpp/rclcpp.hpp"
 #include "vesc_pub_sub/msg/motor_data.hpp"
-#include "inc/Vesc.h"
+#include "geometry_msgs/msg/twist.hpp"
 
+#include "Vesc.h"
 
 using std::mutex;
 using std::map;
 using vesc_pub_sub::msg::MotorData;
 using geometry_msgs::msg::Twist;
 
-class VescNode
+class VescNode: public rclcpp::Node
 {
 public:
-    VescNode(ros::NodeHandle* nh, ros::NodeHandle* nh_param);
+    VescNode();
     void onInit();
 
 private:

@@ -11,6 +11,7 @@ endif()
 include_directories(.
         /opt/ros/rolling/include/
         lib/libVESC/inc
+        lib/libVESC
         /usr/include/libserial
         )
 

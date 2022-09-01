@@ -1,5 +1,5 @@
 
-#include "vesc_node.h"
+#include "vesc_node.hpp"
 #include <memory>
 #include "rclcpp/rclcpp.hpp"
 #include <rcutils/logging_macros.h>
@@ -14,7 +14,7 @@ namespace{
 
 
 
-VescNode::VescNode(ros::NodeHandle* nh, ros::NodeHandle* nh_param), counter(0)
+VescNode::VescNode():Node("vesc_pub_sub"), counter(0)
 {
     RCUTILS_LOG_INFO("%s ", __PRETTY_FUNCTION__);
     onInit();
