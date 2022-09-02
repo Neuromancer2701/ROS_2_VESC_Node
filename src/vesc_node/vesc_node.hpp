@@ -1,7 +1,3 @@
-//
-// Created by Seth M King on 6/25/19.
-//
-
 #ifndef VESC_NODE_H
 #define VESC_NODE_H
 
