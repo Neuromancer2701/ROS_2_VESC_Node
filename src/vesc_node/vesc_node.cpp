@@ -39,13 +39,13 @@ void VescNode::onInit()
 }
 
 
-map<int, int> VescNode::getWheelRpms()
+unordered_map<int, int> VescNode::getWheelRpms()
 {
     lock_guard<std::mutex> lock(rpm_mutex);
     return wheel_rpms;
 }
 
-void VescNode::setWheelRpms(const map<int, int> &wheelRpms)
+void VescNode::setWheelRpms(const unordered_map<int, int> &wheelRpms)
 {
     lock_guard<std::mutex> lock(rpm_mutex);
     wheel_rpms = wheelRpms;
@@ -56,7 +56,8 @@ void VescNode::timer_callback()
 
     auto wheelRpms = getWheelRpms();
 
-    RCUTILS_LOG_INFO("timer_callback:left rpm %d right rpm:%d",wheelRpms[Vesc::left_back], wheelRpms[Vesc::right_back]);
+    RCUTILS_LOG_INFO("timer_callback:left rpm %d right rpm:%d",
+                     wheelRpms[vesc::Vesc::left_back], wheelRpms[vesc::Vesc::right_back]);
     vescApi.SetWheelsRPM(wheelRpms);
 
     if(++counter > PUB_INTERVAL)
@@ -76,16 +77,18 @@ void VescNode::timer_callback()
 void VescNode::twist_callback(const geometry_msgs::msg::Twist::SharedPtr msg)
 {
 
-    double w_L{msg->angular.z * L_m}
-    double scaledVelocity_m_per_s{msg->linear.x * V_MAX_m_per_s * 2};
-    map<int, int> wheelRpms;
+    auto w_L{msg->angular.z * L_m};
+    auto scaledVelocity_m_per_s{msg->linear.x * V_MAX_m_per_s * 2.0};
+
     auto Velocity_right_m_per_s {((scaledVelocity_m_per_s + w_L)/DIAMETER_m)};
     auto Velocity_left_m_per_s {((scaledVelocity_m_per_s - w_L)/DIAMETER_m)};
 
-    wheelRpms[Vesc::right_back] = static_cast<int>(m_per_sec_convert_RPM * Velocity_right_m_per_s);
-    wheelRpms[Vesc::left_back]  = static_cast<int>(m_per_sec_convert_RPM * Velocity_left_m_per_s);
+    unordered_map<int, int> wheelRpms;
+    wheelRpms[vesc::Vesc::right_back] = static_cast<int>(m_per_sec_convert_RPM * Velocity_right_m_per_s);
+    wheelRpms[vesc::Vesc::left_back]  = static_cast<int>(m_per_sec_convert_RPM * Velocity_left_m_per_s);
 
-    RCUTILS_LOG_INFO("Twist callback:left rpm %d right rpm:%d",wheelRpms[Vesc::left_back], wheelRpms[Vesc::right_back]);
+    RCUTILS_LOG_INFO("Twist callback:left rpm %d right rpm:%d",
+                     wheelRpms[vesc::Vesc::left_back], wheelRpms[vesc::Vesc::right_back]);
     setWheelRpms(wheelRpms);
 
 }

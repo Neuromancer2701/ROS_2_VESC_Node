@@ -23,6 +23,10 @@ pkg_check_modules(SERIAL libserial)
 
 
 
+include_directories(.
+        lib/libVESC/inc
+        lib/libVESC
+        /usr/include/libserial)
 
 set(msg_files
    "msg/MotorData.msg"
@@ -48,15 +52,11 @@ set(vesc_lib
 
 add_executable(vesc_node vesc_node.cpp)
 target_link_libraries(vesc_node ${SERIAL_LIBRARIES} ${vesc_lib})
-target_include_directories(vesc_node
-        .
-        lib/libVESC/inc
-        lib/libVESC
-        /usr/include/libserial
-        )
+target_include_directories(vesc_node PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>")
 
 ament_target_dependencies(vesc_node rclcpp std_msgs geometry_msgs)
-rosidl_get_typesupport_target(vesc_node ${PROJECT_NAME} "rosidl_typesupport_cpp")
+rosidl_get_typesupport_target(cpp_typesupport_target ${PROJECT_NAME} "rosidl_typesupport_cpp")
+target_link_libraries(vesc_node "${cpp_typesupport_target}")
 
 
 install(TARGETS
@@ -66,4 +66,4 @@ install(TARGETS
 ament_package()
 
 
-#colcon build --packages-select
+#colcon build --packages-select vesc_pub_sub

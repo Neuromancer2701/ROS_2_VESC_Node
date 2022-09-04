@@ -4,6 +4,7 @@
 #include <chrono>
 #include <memory>
 #include <map>
+#include <unordered_map>
 #include <mutex>
 #include <functional>
 
@@ -15,6 +16,7 @@
 
 using std::mutex;
 using std::map;
+using std::unordered_map;
 using vesc_pub_sub::msg::MotorData;
 using geometry_msgs::msg::Twist;
 
@@ -38,17 +40,17 @@ private:
         PUB_INTERVAL = 10
     };
 
-    Vesc vescApi;
+    vesc::Vesc vescApi;
     mutex  rpm_mutex;
-    map<int, int> wheel_rpms;
+    unordered_map<int, int> wheel_rpms;
 
-    map<int, int> getWheelRpms();
-    void setWheelRpms(const map<int, int> &wheelRpms);
+    unordered_map<int, int> getWheelRpms();
+    void setWheelRpms(const unordered_map<int, int> &wheelRpms);
 
-    constexpr double V_MAX_m_per_s{4.5};
-    constexpr double L_m{0.9271};
-    constexpr double DIAMETER_m{0.3048};
-    constexpr double m_per_sec_convert_RPM{62.69}; //m/s * convert = RPM
+    static constexpr double V_MAX_m_per_s{4.5};
+    static constexpr double L_m{0.9271};
+    static constexpr double DIAMETER_m{0.3048};
+    static constexpr double m_per_sec_convert_RPM{62.69}; //m/s * convert = RPM
 
 };
 
