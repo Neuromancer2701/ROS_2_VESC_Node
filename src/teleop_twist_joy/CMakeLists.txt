@@ -19,7 +19,7 @@ find_package(sensor_msgs REQUIRED)
 
 include_directories(include)
 
-add_library(${PROJECT_NAME} SHARED src/${PROJECT_NAME})
+add_library(${PROJECT_NAME} SHARED src/${PROJECT_NAME}.cpp)
 
 include(GenerateExportHeader)
 generate_export_header(${PROJECT_NAME} EXPORT_FILE_NAME ${PROJECT_NAME}/${PROJECT_NAME}_export.h)

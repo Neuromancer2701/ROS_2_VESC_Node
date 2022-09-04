@@ -37,7 +37,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
    DEPENDENCIES std_msgs
 )
 
-link_directories(/usr/lib/x86_64-linux-gnu/ )
+link_directories(/usr/lib/x86_64-linux-gnu/
+                 lib/libVESC)
 
 
 if(NOT WIN32)
