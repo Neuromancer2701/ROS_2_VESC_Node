@@ -11,6 +11,7 @@ RUN apt-get update \
       cmake \
       rsync \
       libserial-dev \
+      ros-rolling-joy-linux \
       tar \
       wget \
   && apt-get clean
