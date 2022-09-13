@@ -63,11 +63,10 @@ struct TeleopTwistJoy::Impl
 
   int64_t enable_button;
   bool sent_disable_msg;
-  std::chrono::time_point<std::chrono::steady_clock>  previousTime;
-  std::chrono::time_point<std::chrono::steady_clock>   currentTime;
-  bool m_firstTime{true};
-  double previousTheta_angle{0.0};
-  double currentTheta_angle{0.0};
+  std::chrono::time_point<std::chrono::steady_clock>   m_CurrentTime{std::chrono::steady_clock::now()};
+  bool m_FirstTime{true};
+
+  double m_CurrentTheta_angle{0.0};
 };
 
 /**
@@ -100,23 +99,16 @@ void TeleopTwistJoy::Impl::sendCmdVelMsg(const sensor_msgs::msg::Joy::SharedPtr 
   auto y{joy_msg->axes[1]};
 
   auto magnitude{hypot(x, y)};
-  previousTheta_angle = currentTheta_angle;
-  currentTheta_angle = atan2 (y,x) * 180 / M_PI;
+  auto previousTheta_angle = m_CurrentTheta_angle;
+    m_CurrentTheta_angle = atan2 (y,x) * 180 / M_PI;
 
-  if(m_firstTime){
-      previousTime = std::chrono::steady_clock::now();
-      currentTime = std::chrono::steady_clock::now();
-      m_firstTime = false;
-      return;
-  }
-
-  previousTime = currentTime;
-  currentTime = std::chrono::steady_clock::now();
-  auto delta{std::chrono::duration_cast<Sec>(currentTime - previousTime).count()};
+  auto previousTime = m_CurrentTime;
+  m_CurrentTime = std::chrono::steady_clock::now();
+  auto delta{std::chrono::duration_cast<Sec>(m_CurrentTime - previousTime).count()};
 
   if(delta > DELTA_THRESHOLD_S){
       cmd_vel_msg->linear.x  = magnitude;
-      cmd_vel_msg->angular.z = ((currentTheta_angle - previousTheta_angle)/delta);
+      cmd_vel_msg->angular.z = ((m_CurrentTheta_angle - previousTheta_angle)/delta);
 
       cmd_vel_pub->publish(std::move(cmd_vel_msg));
   }

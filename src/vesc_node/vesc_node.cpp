@@ -83,6 +83,11 @@ void VescNode::twist_callback(const geometry_msgs::msg::Twist::SharedPtr msg)
     auto Velocity_right_m_per_s {((scaledVelocity_m_per_s + w_L)/DIAMETER_m)};
     auto Velocity_left_m_per_s {((scaledVelocity_m_per_s - w_L)/DIAMETER_m)};
 
+    RCUTILS_LOG_INFO("Twist callback w_L: %f scaled Velo:%f  Velo right: %f Velo left: %f", w_L, scaledVelocity_m_per_s,
+                     Velocity_right_m_per_s, Velocity_left_m_per_s);
+
+
+
     unordered_map<int, int> wheelRpms;
     wheelRpms[vesc::Vesc::right_back] = static_cast<int>(m_per_sec_convert_RPM * Velocity_right_m_per_s);
     wheelRpms[vesc::Vesc::left_back]  = static_cast<int>(m_per_sec_convert_RPM * Velocity_left_m_per_s);
